@@ -1,0 +1,826 @@
+/* Contact Page Variables */
+.contactSection {
+  position: relative;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
+  min-height: 100vh;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+/* Canada Pattern Background */
+.canadaPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.03;
+  z-index: 1;
+}
+
+.mapOutline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+  background-image: url("data:image/svg+xml,%3Csvg width='800' height='500' viewBox='0 0 800 500' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M400,50 L500,100 L600,80 L650,150 L700,200 L750,300 L700,400 L600,450 L400,480 L200,450 L100,350 L50,250 L100,150 L200,100 L300,70 Z' stroke='%231E40AF' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Container */
+.contactContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.contactHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.headerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(216, 6, 33, 0.1);
+  border: 1px solid rgba(216, 6, 33, 0.2);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #D80621;
+  margin-bottom: 2rem;
+}
+
+.contactTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #1E293B;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.titleHighlight {
+  background: linear-gradient(135deg, #D80621, #1E40AF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.contactSubtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #64748B;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid Layout */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Form Column */
+.formColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Form Card */
+.formCard {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.formIcon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #1E40AF, #D80621);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.formGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+  border-radius: 15px;
+  animation: formGlow 3s infinite alternate;
+}
+
+.formTitle h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 0.5rem;
+}
+
+.formTitle p {
+  color: #64748B;
+  font-size: 0.95rem;
+}
+
+/* Success Message */
+.successMessage {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.successMessage svg {
+  color: #10B981;
+  margin-bottom: 1.5rem;
+}
+
+.successMessage h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 1rem;
+}
+
+.successMessage p {
+  color: #64748B;
+  line-height: 1.6;
+}
+
+/* Contact Form */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.formLabel svg {
+  color: #1E40AF;
+}
+
+.formInput, .formSelect, .formTextarea {
+  padding: 0.875rem 1rem;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #1E293B;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus, .formSelect:focus, .formTextarea:focus {
+  outline: none;
+  border-color: #1E40AF;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.formInput::placeholder, .formTextarea::placeholder {
+  color: #94A3B8;
+}
+
+.formSelect {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/* Consent Checkbox */
+.consentGroup {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: #F8FAFC;
+  border-radius: 10px;
+}
+
+.consentCheckbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.125rem;
+  accent-color: #1E40AF;
+}
+
+.consentLabel {
+  font-size: 0.875rem;
+  color: #64748B;
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* Submit Button */
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #D80621, #1E40AF);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submitButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.submitButton:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+}
+
+.formNote {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #94A3B8;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Certifications */
+.certifications {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.certificationsTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: 1.5rem;
+}
+
+.certificationsTitle svg {
+  color: #1E40AF;
+}
+
+.certificationsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.certificationCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.certificationCard:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #1E40AF;
+}
+
+.certIcon svg {
+  color: #10B981;
+}
+
+.certText {
+  display: flex;
+  flex-direction: column;
+}
+
+.certName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: 0.25rem;
+}
+
+.certDesc {
+  font-size: 0.75rem;
+  color: #64748B;
+}
+
+/* Info Column */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Emergency Contact */
+.emergencyContact {
+  background: rgba(216, 6, 33, 0.1);
+  border: 1px solid rgba(216, 6, 33, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.emergencyHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.emergencyHeader svg {
+  color: #D80621;
+}
+
+.emergencyHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 0.25rem;
+}
+
+.emergencyHeader p {
+  color: #64748B;
+  font-size: 0.875rem;
+}
+
+.emergencyNumber {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.emergencyNumber svg {
+  color: #D80621;
+}
+
+.emergencyLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #D80621;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.emergencyPhone {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 0.25rem;
+}
+
+.emergencySub {
+  font-size: 0.875rem;
+  color: #64748B;
+}
+
+.emergencyHours {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748B;
+}
+
+.emergencyHours svg {
+  color: #F59E0B;
+}
+
+/* Offices Section */
+.officesSection {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle svg {
+  color: #1E40AF;
+}
+
+/* .officesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+} */
+
+.officeCard {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.officeCard:hover {
+  border-color: #1E40AF;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.officeHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.officeHeader h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.officeHeader svg {
+  color: #D80621;
+}
+
+.officeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.officeItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.officeItem span:first-child {
+  font-size: 20px;
+  font-weight: 600;
+  color: #151515;
+  text-transform: uppercase;
+}
+
+.officeItem span:last-child {
+  font-size: 0.875rem;
+  color: #1E293B;
+  line-height: 1.4;
+}
+
+/* Coverage Section */
+.coverageSection {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.coverageMap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.provinceCoverage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.provinceGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #F8FAFC;
+  border-radius: 10px;
+}
+
+.provinceTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1E40AF;
+}
+
+.provinceGroup span:last-child {
+  font-size: 0.875rem;
+  color: #64748B;
+}
+
+.coverageStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(216, 6, 33, 0.05));
+  border-radius: 15px;
+  border: 1px solid #E2E8F0;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1E40AF;
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: #64748B;
+}
+
+/* Quick Services */
+.quickServices {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #F8FAFC;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.serviceItem:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #1E40AF;
+}
+
+.serviceIcon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #1E40AF, #D80621);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.serviceItem span {
+  font-size: 0.875rem;
+  color: #1E293B;
+  flex: 1;
+}
+
+/* Benefits Bar */
+.benefitsBar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.benefitItem svg {
+  color: #10B981;
+  flex-shrink: 0;
+}
+
+.benefitTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: 0.25rem;
+}
+
+.benefitDesc {
+  font-size: 0.75rem;
+  color: #64748B;
+}
+
+/* Animations */
+@keyframes formGlow {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes spinner {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .certificationsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .officesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .provinceCoverage {
+    grid-template-columns: 1fr;
+  }
+
+  .coverageStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefitsBar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contactContainer {
+    padding: 0 1rem;
+  }
+
+  .contactTitle {
+    font-size: 2.5rem;
+  }
+
+  .contactSubtitle {
+    font-size: 1rem;
+  }
+
+  .formCard {
+    padding: 1.5rem;
+  }
+
+  .emergencyPhone {
+    font-size: 1.5rem;
+  }
+
+  .officesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .coverageStats {
+    grid-template-columns: 1fr;
+  }
+
+  .benefitsBar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactHeader {
+    margin-bottom: 2rem;
+  }
+
+  .headerBadge {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .formHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .submitButton {
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .officeCard {
+    padding: 1rem;
+  }
+
+  .serviceItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}

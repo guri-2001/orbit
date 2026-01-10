@@ -1,0 +1,729 @@
+/* CCTV Theme Variables - Updated for White Background */
+:root {
+    --security-blue: #1E40AF;
+    --security-dark: #0F172A;
+    --security-light: #EFF6FF;
+    --camera-red: #DC2626;
+    --camera-green: #10B981;
+    --camera-purple: #8B5CF6;
+    --camera-orange: #F59E0B;
+    --camera-cyan: #06B6D4;
+    --glass-white: rgba(255, 255, 255, 0.98);
+    --glass-border: rgba(30, 64, 175, 0.1);
+    --grid-color: rgba(59, 130, 246, 0.05);
+    --text-dark: #1E293B;
+    --text-gray: #64748B;
+    --text-light: #F8FAFC;
+}
+
+/* Base Navbar - White Background */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    background: var(--glass-white);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.navContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Logo - CCTV Camera Style (Same Design) */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.logoIcon {
+    position: relative;
+}
+
+.cameraIcon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--security-blue), var(--camera-purple));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cameraIcon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+}
+
+.cameraLens {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #0F172A;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.recordingDot {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--camera-red);
+    border-radius: 50%;
+    animation: recording 2s infinite;
+}
+
+.logoText {
+    display: flex;
+    flex-direction: column;
+}
+
+.logoMain {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1E40AF, #8B5CF6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+.logoSub {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748B;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Desktop Navigation */
+.desktopNav {
+    display: flex;
+    align-items: center;
+}
+
+.navLinks {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    /* background: rgba(59, 130, 246, 0.05); */
+    border-radius: 12px;
+    /* border: 1px solid rgba(59, 130, 246, 0.1); */
+}
+
+.navLink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.navLink:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--security-blue);
+    transform: translateY(-2px);
+}
+
+.navLink.active {
+    /* background: rgba(59, 130, 246, 0.15); */
+    color: var(--security-blue);
+    font-weight: 600;
+}
+
+.linkIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.navLink:hover .linkIcon {
+    transform: scale(1.2);
+}
+
+.liveBadge {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--camera-red);
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+}
+
+.liveDot {
+    width: 6px;
+    height: 6px;
+    background: var(--camera-red);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+.linkIndicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    border-radius: 1px;
+}
+
+/* Nav Actions */
+.navActions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.emergencyContact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(220, 38, 38, 0.05);
+    color: var(--camera-red);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.emergencyContact:hover {
+    background: rgba(220, 38, 38, 0.1);
+    transform: translateY(-2px);
+}
+
+.quoteBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--camera-green), var(--security-blue));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.quoteBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.quoteBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+
+.quoteBtn:hover::before {
+    left: 100%;
+}
+
+/* Menu Button */
+.menuBtn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menuIcon {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menuIcon span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--text-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menuIcon.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.menuIcon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menuIcon.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Scanning Line Animation */
+.scanLine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #3B82F6, transparent);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    z-index: 1001;
+}
+
+/* Backdrop with Camera Grid */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cameraGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.cameraCell {
+    aspect-ratio: 1;
+    background: rgba(59, 130, 246, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridCamera {
+    width: 30px;
+    height: 30px;
+    background: var(--security-blue);
+    border-radius: 50%;
+    position: relative;
+}
+
+.gridCamera::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+/* CCTV Themed Sidebar - White Background */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 85%;
+    max-width: 400px;
+    background: white;
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border-left: 1px solid rgba(226, 232, 240, 0.8);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -10px 0 50px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+/* Sidebar Header */
+.sidebarHeader {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    background: white;
+}
+
+.sidebarLogo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sidebarCamera {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--security-blue), var(--camera-purple));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.sidebarLens {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.sidebarLogoMain {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.sidebarLogoSub {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+}
+
+.sidebarStatus {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.statusIndicator {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 4px;
+}
+
+.statusDot {
+    width: 6px;
+    height: 6px;
+    background: var(--camera-green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.sidebarStatus span {
+    font-size: 0.75rem;
+    color: var(--camera-green);
+}
+
+.closeBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.05);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    color: var(--text-dark);
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.closeBtnIcon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.closeBtn:hover {
+    background: rgba(59, 130, 246, 0.1);
+    transform: rotate(90deg);
+}
+
+/* Sidebar Navigation */
+.sidebarNav {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebarLink {
+    position: relative;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(241, 245, 249, 0.5);
+    border: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.sidebarLink:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.2);
+    transform: translateX(5px);
+}
+
+.sidebarLink.active {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: var(--security-blue);
+    color: var(--security-blue);
+}
+
+.sidebarLinkInner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sidebarLinkIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.sidebarLink:hover .sidebarLinkIcon {
+    transform: scale(1.1);
+}
+
+.sidebarLinkContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarLinkText {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.sidebarLinkDesc {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    margin-top: 0.25rem;
+}
+
+.sidebarLinkArrow {
+    color: var(--text-gray);
+    transition: all 0.3s ease;
+}
+
+.sidebarLink:hover .sidebarLinkArrow {
+    color: var(--security-blue);
+    transform: translateX(3px);
+}
+
+.sidebarActiveIndicator {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Sidebar Footer */
+.sidebarFooter {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(226, 232, 240, 0.8);
+    background: white;
+}
+
+.quickActions {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.quickBtn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--security-blue);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quickBtn:hover {
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateY(-2px);
+}
+
+.sidebarContact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(241, 245, 249, 0.5);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: var(--text-dark);
+}
+
+/* Animations */
+@keyframes recording {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .desktopNav {
+        display: none;
+    }
+
+    .menuBtn {
+        display: block;
+    }
+
+    .emergencyContact span {
+        display: none;
+    }
+
+    .emergencyContact {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navContainer {
+        padding: 0 1rem;
+    }
+
+    .quoteBtn span {
+        display: none;
+    }
+
+    .quoteBtn {
+        padding: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .quoteBtn::after {
+        content: '📞';
+    }
+
+    .sidebar {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    .logoMain {
+        font-size: 1.2rem;
+    }
+
+    .logoSub {
+        font-size: 0.65rem;
+    }
+}

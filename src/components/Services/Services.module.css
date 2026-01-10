@@ -1,0 +1,643 @@
+/* Services Section - Unique Class Names */
+.servicesSection {
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  overflow: hidden;
+}
+
+/* Background Elements */
+.secBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.secGridPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+  opacity: 0.5;
+}
+
+.secFloatingIcons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.secFloatingIcon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3B82F6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  animation: secFloat 20s infinite linear;
+}
+
+.secFloatingIcon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.secFloatingIcon:nth-child(2) { top: 20%; right: 10%; animation-delay: 2s; }
+.secFloatingIcon:nth-child(3) { bottom: 30%; left: 15%; animation-delay: 4s; }
+.secFloatingIcon:nth-child(4) { bottom: 15%; right: 20%; animation-delay: 6s; }
+.secFloatingIcon:nth-child(5) { top: 40%; left: 8%; animation-delay: 8s; }
+.secFloatingIcon:nth-child(6) { bottom: 40%; right: 5%; animation-delay: 10s; }
+
+/* Container */
+.secContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.secHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.secBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #3B82F6;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.secTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  /* margin-bottom: 1.5rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.secTitleMain {
+  color: #1E293B;
+}
+
+.secTitleSub {
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.secTitleSub::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+  border-radius: 2px;
+}
+
+.secDescription {
+  font-size: 1.125rem;
+  color: #64748B;
+  max-width: 600px;
+  margin: 20px auto 0;
+  line-height: 1.6;
+}
+
+/* Services Grid */
+.secGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  /* margin-bottom: 4rem; */
+}
+
+/* Service Card */
+.secCard {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.secCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.secCardActive {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* Card Header */
+.secCardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.secCardIcon {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+.secIconInner {
+  position: relative;
+  z-index: 2;
+}
+
+.secIconGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(10px);
+}
+
+.secCardTitle h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1E293B;
+  /* margin-bottom: 0.5rem; */
+  line-height: 1.2;
+    margin: 0;
+}
+
+.secCardStats {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.secStat {
+  font-weight: 600;
+  color: #475569;
+}
+
+.secStatDivider {
+  color: #CBD5E1;
+}
+
+/* Card Content */
+.secCardDescription {
+  color: #64748B;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Features List */
+.secFeatures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.secFeatureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+.secFeatureIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Stats Bars */
+.secStatsBars {
+  margin-bottom: 2rem;
+}
+
+.secStatBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.secBarLabel {
+  width: 100px;
+  font-size: 0.875rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.secBarContainer {
+  flex: 1;
+  height: 8px;
+  background: #E2E8F0;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.secBarFill {
+  height: 100%;
+  border-radius: 4px;
+  position: relative;
+}
+
+.secBarFill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: secShimmer 2s infinite;
+}
+
+.secBarValue {
+  width: 40px;
+  text-align: right;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+/* Hover Elements */
+.secHoverElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.secCard:hover .secHoverElements {
+  opacity: 1;
+}
+
+.secPulseRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  border: 2px solid;
+  border-radius: 24px;
+  animation: secPulse 2s infinite;
+}
+
+.secCornerTopLeft,
+.secCornerTopRight,
+.secCornerBottomLeft,
+.secCornerBottomRight {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+}
+
+.secCornerTopLeft {
+  top: -1px;
+  left: -1px;
+  border-radius: 20px 0 0 0;
+}
+
+.secCornerTopRight {
+  top: -1px;
+  right: -1px;
+  border-radius: 0 20px 0 0;
+}
+
+.secCornerBottomLeft {
+  bottom: -1px;
+  left: -1px;
+  border-radius: 0 0 0 20px;
+}
+
+.secCornerBottomRight {
+  bottom: -1px;
+  right: -1px;
+  border-radius: 0 0 20px 0;
+}
+
+/* Action Button */
+.secActionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--color, #3B82F6), var(--color, #3B82F6)DD);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.secActionBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.secActionBtn:hover::before {
+  left: 100%;
+}
+
+.secActionBtn:hover {
+  box-shadow: 0 10px 30px rgba(var(--hover-color-rgb, 59, 130, 246), 0.3);
+}
+
+/* Service Comparison */
+.secComparison {
+  margin-top: 3rem;
+}
+
+.secComparisonCard {
+  background: linear-gradient(135deg, #1E293B, #0F172A);
+  border-radius: 24px;
+  padding: 3rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.secComparisonCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+}
+
+.secComparisonHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.secComparisonHeader h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  flex: 1;
+}
+
+.secComparisonBadge {
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, #10B981, #059669);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.secComparisonContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.secComparisonFeatures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  flex: 1;
+}
+
+.secComparisonFeature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #E2E8F0;
+}
+
+.secPackageBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: white;
+  color: #1E293B;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secPackageBtn:hover {
+  background: #F1F5F9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating CTAs */
+.secFloatingCTAs {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.secFloatingCTA {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secFloatingCTA:hover {
+  background: #3B82F6;
+  color: white;
+  transform: translateX(-10px);
+}
+
+/* Animations */
+@keyframes secFloat {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(10px) translateX(20px); }
+  75% { transform: translateY(-10px) translateX(-10px); }
+}
+
+@keyframes secShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes secPulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .secGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .secComparisonContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .secComparisonFeatures {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .servicesSection {
+    padding: 60px 0;
+  }
+  
+  .secContainer {
+    padding: 0 1rem;
+  }
+  
+  .secTitle {
+    font-size: 2.5rem;
+  }
+  
+  .secGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .secFeatures {
+    grid-template-columns: 1fr;
+  }
+  
+  .secFloatingCTAs {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .secFloatingCTA:hover {
+    transform: translateY(-5px);
+  }
+  
+  .secComparisonCard {
+    padding: 2rem;
+  }
+  
+  .secComparisonFeatures {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .secTitle {
+    font-size: 2rem;
+  }
+  
+  .secCard {
+    padding: 1.5rem;
+  }
+  
+  .secCardHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .secCardIcon {
+    margin: 0 auto;
+  }
+  
+  .secComparisonHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}

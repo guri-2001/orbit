@@ -1,0 +1,1081 @@
+/* About Us Variables - Canadian Theme */
+:root {
+  --canada-red: #D80621;
+  --canada-white: #FFFFFF;
+  --canada-light: #F8FAFC;
+  --canada-blue: #1E40AF;
+  --canada-dark: #0F172A;
+  --canada-gray: #64748B;
+  --canada-light-blue: rgba(30, 64, 175, 0.1);
+  --canada-light-red: rgba(216, 6, 33, 0.1);
+  --border-light: rgba(226, 232, 240, 0.8);
+  --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --gradient-red-white: linear-gradient(90deg, #D80621 0%, #FFFFFF 50%, #D80621 100%);
+}
+
+/* About Section */
+.aboutSection {
+  position: relative;
+  background: var(--canada-white);
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+/* Canadian Background Pattern */
+.canadianBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.mapPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, var(--canada-red) 1px, transparent 1px),
+    radial-gradient(circle at 80% 70%, var(--canada-red) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.snowflakePattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(30, 64, 175, 0.1) 20px),
+    repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(30, 64, 175, 0.1) 20px);
+  background-size: 20px 20px;
+}
+
+.leafPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23D80621' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero Header */
+.aboutHero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.canadianBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--canada-white);
+  border: 2px solid var(--border-light);
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-light);
+}
+
+.flagMarkers {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flagRed {
+  color: var(--canada-red);
+  font-size: 1.25rem;
+}
+
+.flagWhite {
+  font-weight: 600;
+  color: var(--canada-dark);
+  letter-spacing: 0.5px;
+}
+
+.badgeText {
+  font-size: 0.875rem;
+  color: var(--canada-gray);
+  font-weight: 500;
+}
+
+.aboutTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--canada-dark);
+}
+
+.titleHighlight {
+  position: relative;
+  color: var(--canada-blue);
+}
+
+.titleHighlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: rgba(30, 64, 175, 0.15);
+  border-radius: 6px;
+  z-index: -1;
+}
+
+.aboutIntro {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--canada-gray);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Company Overview */
+.companyOverview {
+  margin-bottom: 4rem;
+}
+
+.overviewCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  background: var(--canada-white);
+  border: 1px solid var(--border-light);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: var(--shadow-medium);
+}
+
+.overviewVisual {
+  position: relative;
+  height: 300px;
+}
+
+.canadianNetwork {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.networkHub {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--canada-blue), var(--canada-red));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+}
+
+.hubGlow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(circle, rgba(30, 64, 175, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.networkNodes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.networkNode {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--canada-red);
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.networkNode:nth-child(1) { top: 20%; left: 10%; }
+.networkNode:nth-child(2) { top: 10%; right: 20%; }
+.networkNode:nth-child(3) { bottom: 30%; left: 20%; }
+.networkNode:nth-child(4) { bottom: 20%; right: 10%; }
+.networkNode:nth-child(5) { top: 40%; right: 30%; }
+.networkNode:nth-child(6) { bottom: 40%; left: 30%; }
+
+.overviewContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.overviewTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--canada-dark);
+  margin-bottom: 0.5rem;
+}
+
+.overviewText {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--canada-gray);
+}
+
+.provinceCoverage h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--canada-dark);
+  margin-bottom: 1rem;
+}
+
+.provinceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.provinceBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--canada-light);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: var(--canada-dark);
+}
+
+.provinceBadge svg {
+  color: var(--canada-red);
+}
+
+/* Services Section */
+.servicesSection {
+  margin-bottom: 6rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--canada-dark);
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  color: var(--canada-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.serviceCard {
+  background: var(--canada-white);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+}
+
+.serviceCard:hover {
+  border-color: var(--canada-blue);
+  box-shadow: 0 20px 60px rgba(30, 64, 175, 0.1);
+}
+
+.serviceHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(30, 64, 175, 0.1);
+}
+
+.serviceIcon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--canada-blue), var(--canada-red));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.serviceCategory {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--canada-dark);
+}
+
+.serviceList {
+  margin-bottom: 2rem;
+}
+
+.listTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--canada-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.serviceItems {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--canada-dark);
+}
+
+.serviceItem svg {
+  color: var(--canada-blue);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.canadianFeatures {
+  background: rgba(30, 64, 175, 0.03);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.featuresTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--canada-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--canada-gray);
+}
+
+.featureIcon {
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--canada-blue);
+}
+
+.serviceBadge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(216, 6, 33, 0.1);
+  color: var(--canada-red);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Why Choose Us Section */
+.whyChooseSection {
+  margin-bottom: 6rem;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.reasonCard {
+  background: var(--canada-white);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-light);
+}
+
+.reasonCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--canada-blue);
+  box-shadow: 0 15px 50px rgba(30, 64, 175, 0.1);
+}
+
+.reasonHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reasonIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--canada-light-blue);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--canada-blue);
+}
+
+.reasonTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--canada-dark);
+}
+
+.reasonDescription {
+  font-size: 0.95rem;
+  color: var(--canada-gray);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.reasonDetails {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--canada-dark);
+}
+
+.detailMarker {
+  width: 6px;
+  height: 6px;
+  background: var(--canada-red);
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* Standards Section */
+.standardsSection {
+  margin-bottom: 6rem;
+}
+
+.standardsCard {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(216, 6, 33, 0.05));
+  border: 1px solid var(--border-light);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: var(--shadow-medium);
+}
+
+.standardsHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.standardsLogo {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--canada-blue), var(--canada-red));
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.standardsTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--canada-dark);
+  margin-bottom: 0.5rem;
+}
+
+.standardsSubtitle {
+  font-size: 1.125rem;
+  color: var(--canada-gray);
+}
+
+.standardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.standardItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 15px;
+}
+
+.standardBadge {
+  width: 40px;
+  height: 40px;
+  background: var(--canada-light-blue);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--canada-blue);
+  flex-shrink: 0;
+}
+
+.standardContent {
+  flex: 1;
+}
+
+.standardName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--canada-dark);
+  margin-bottom: 0.5rem;
+}
+
+.standardDesc {
+  font-size: 0.95rem;
+  color: var(--canada-gray);
+  line-height: 1.5;
+}
+
+.complianceNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 15px;
+  border-left: 4px solid var(--canada-blue);
+}
+
+.complianceIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--canada-light-blue);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--canada-blue);
+  flex-shrink: 0;
+}
+
+.complianceNote p {
+  font-size: 0.95rem;
+  color: var(--canada-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Climate Section */
+.climateSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.climateVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.weatherCards {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.weatherCard {
+  width: 150px;
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: var(--shadow-light);
+}
+
+.weatherIcon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(216, 6, 33, 0.1));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: var(--canada-blue);
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.weatherTemp {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--canada-dark);
+}
+
+.weatherLabel {
+  font-size: 0.875rem;
+  color: var(--canada-gray);
+}
+
+.climateContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.climateTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--canada-dark);
+  margin-bottom: 0.5rem;
+}
+
+.climateText {
+  font-size: 1.125rem;
+  color: var(--canada-gray);
+  line-height: 1.6;
+}
+
+.climateFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.climateFeature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+}
+
+.featureIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--canada-light-blue);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--canada-blue);
+}
+
+.climateFeature span {
+  font-size: 0.95rem;
+  color: var(--canada-dark);
+}
+
+/* Partners Section */
+.partnersSection {
+  margin-bottom: 6rem;
+}
+
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.partnerCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.partnerCard:hover {
+  border-color: var(--canada-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+.partnerLogo {
+  width: 50px;
+  height: 50px;
+  background: var(--canada-light-blue);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--canada-blue);
+  flex-shrink: 0;
+}
+
+.partnerName {
+  font-size: 0.95rem;
+  color: var(--canada-dark);
+  font-weight: 500;
+}
+
+/* Team Section */
+.teamSection {
+  margin-bottom: 6rem;
+}
+
+.teamHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.teamTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--canada-dark);
+  margin-bottom: 1rem;
+}
+
+.teamSubtitle {
+  font-size: 1.125rem;
+  color: var(--canada-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.teamStats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.teamStat {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 15px;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--canada-blue);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.95rem;
+  color: var(--canada-gray);
+}
+
+.teamNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(216, 6, 33, 0.05));
+  border-radius: 15px;
+  border: 1px solid var(--border-light);
+}
+
+.teamNote svg {
+  color: var(--canada-blue);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.teamNote p {
+  font-size: 1.125rem;
+  color: var(--canada-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CTA Section */
+.ctaSection {
+  margin-bottom: 4rem;
+}
+
+.ctaCard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  background: linear-gradient(135deg, var(--canada-blue), #1D4ED8);
+  border-radius: 24px;
+  padding: 4rem;
+  color: white;
+}
+
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ctaText {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.primaryCta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: white;
+  color: var(--canada-blue);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.secondaryCta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondaryCta:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+.ctaVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.canadianShield {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.shieldGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.canadianShield svg {
+  color: white;
+  z-index: 1;
+}
+
+.shieldText {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .aboutTitle {
+    font-size: 2.5rem;
+  }
+
+  .overviewCard {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .servicesGrid,
+  .whyGrid,
+  .standardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .climateSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .teamStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ctaCard {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .weatherCards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 80px 0 40px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .overviewCard,
+  .standardsCard,
+  .ctaCard {
+    padding: 2rem;
+  }
+
+  .provinceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .partnersGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutTitle {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .weatherCards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teamStats {
+    grid-template-columns: 1fr;
+  }
+
+  .canadianBadge {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
