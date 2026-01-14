@@ -71,15 +71,20 @@ const Navbar = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        <div className={styles.logoIcon}>
+                        {/* <div className={styles.logoIcon}>
                             <div className={styles.cameraIcon}>
                                 <Camera size={28} />
                                 <div className={styles.cameraLens}></div>
                             </div>
                             <div className={styles.recordingDot}></div>
-                        </div>
+                        </div> */}
                         <div className={styles.logoText}>
-                            <span className={styles.logoMain}>OrbitTech</span>
+                            <img
+                                src="/images/logo.png"
+                                alt="OrbitTech CCTV Control Panel"
+                                className={styles.logoImage}
+                            />
+                            {/* <span className={styles.logoMain}>OrbitTech</span> */}
                             {/* <span className={styles.logoSub}>CCTV Solutions</span> */}
                         </div>
                     </motion.div>
@@ -122,7 +127,7 @@ const Navbar = () => {
                             whileTap={{ scale: 0.95 }}
                         >
                             <Shield size={16} />
-                            <span>Emergency: 1-800-SECURE</span>
+                            <span>Emergency: +1 (437) 351-1000</span>
                         </motion.div>
 
                         {/* Free Quote Button */}

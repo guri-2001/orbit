@@ -27,10 +27,10 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: <Phone size={18} />, text: 'Emergency: 1-800-SECURE', type: 'emergency' },
-    { icon: <Phone size={18} />, text: 'Sales: (555) 123-4567', type: 'sales' },
-    // { icon: <Mail size={18} />, text: 'support@securevision.com', type: 'email' },
-    { icon: <MapPin size={18} />, text: '123 Security Plaza, Suite 100', type: 'address' },
+    { icon: <Phone size={18} />, text: 'Emergency: +1 (437) 351-1000', type: 'emergency' },
+    // { icon: <Phone size={18} />, text: 'Sales: (555) 123-4567', type: 'sales' },
+    { icon: <Mail size={18} />, text: 'Canadaorbit@gmail.com', type: 'email' },
+    { icon: <MapPin size={18} />, text: '3 Fletchers Creek Blvd, Brampton ON L6X 4R7, Canada', type: 'address' },
   ];
 
   const socialLinks = [
@@ -70,14 +70,19 @@ const Footer = () => {
               transition={{ type: 'spring', stiffness: 300 }}
             >
               <div className={styles.securityBrand}>
-                <div className={styles.footerLogo}>
+                {/* <div className={styles.footerLogo}>
                   <div className={styles.logoGlow}></div>
                   <Camera size={32} className={styles.logoIcon} />
                   <div className={styles.cameraLens}></div>
                   <div className={styles.recordingDot}></div>
-                </div>
+                </div> */}
                 <div className={styles.brandText}>
-                  <h3 className={styles.brandName}>OrbitTech</h3>
+                  <img 
+                    src="/images/logo.png" 
+                    alt="OrbitTech Logo" 
+                    className={styles.footerLogoImage}
+                  />
+                  {/* <h3 className={styles.brandName}>OrbitTech</h3> */}
                   {/* <p className={styles.brandTagline}>Advanced Security Solutions</p> */}
                 </div>
               </div>

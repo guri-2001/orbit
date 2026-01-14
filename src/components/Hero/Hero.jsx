@@ -23,6 +23,28 @@ const Hero = () => {
     };
   }, []);
 
+  // Function to scroll to services section
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  // Function to scroll to products section
+  const scrollToProducts = () => {
+    const productsSection = document.getElementById('products');
+    if (productsSection) {
+      productsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   const securityFeatures = [
     { icon: <Eye />, title: '360° Coverage', desc: 'Complete area monitoring' },
     { icon: <Zap />, title: 'AI Detection', desc: 'Smart threat recognition' },
@@ -74,7 +96,7 @@ const Hero = () => {
               With <span className={styles.highlight}>Advanced</span>
             </span>
             <span className={styles.titleLine}>
-              <span className={styles.gradientText}>CCTV Solutions</span>
+              <span className={styles.gradientText}>Technical Solutions</span>
             </span>
           </motion.h1>
 
@@ -88,6 +110,34 @@ const Hero = () => {
             24/7 professional monitoring, and crystal-clear 4K resolution. 
             Your safety redefined.
           </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div 
+            className={styles.actionButtons}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            <motion.button 
+              className={styles.primaryBtn}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={scrollToServices}
+            >
+              <Shield size={20} />
+              <span>Explore Services</span>
+              <ChevronRight size={20} />
+            </motion.button>
+            <motion.button 
+              className={styles.secondaryBtn}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={scrollToProducts}
+            >
+              <Play size={18} />
+              <span>View Products</span>
+            </motion.button>
+          </motion.div>
 
           {/* Interactive Camera Selector */}
           <motion.div 
@@ -126,31 +176,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* CTA Buttons */}
-          {/* <motion.div 
-            className={styles.actionButtons}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
-            <motion.button 
-              className={styles.primaryBtn}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Shield size={20} />
-              <span>Get Free Security Audit</span>
-              <ChevronRight size={20} />
-            </motion.button>
-            <motion.button 
-              className={styles.secondaryBtn}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Play size={18} />
-              <span>Watch Demo</span>
-            </motion.button>
-          </motion.div> */}
+          
         </div>
 
         {/* Right Visual */}

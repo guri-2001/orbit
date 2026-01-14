@@ -23,7 +23,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 7px 0;
     background: var(--glass-white);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -108,6 +108,11 @@
 .logoText {
     display: flex;
     flex-direction: column;
+}
+
+.logo .logoImage {
+    width: 100px;
+    height: auto;
 }
 
 .logoMain {

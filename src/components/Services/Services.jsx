@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Camera, Eye, Shield, Zap, Video, Cloud, Smartphone, Users, Bell, Lock, Wifi, Settings, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './Services.module.css';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const [activeService, setActiveService] = useState(null);
@@ -96,7 +97,7 @@ const Services = () => {
       <div className={styles.secContainer}>
         {/* Section Header */}
         <div className={styles.secHeader}>
-          <motion.div 
+          <motion.div
             className={styles.secBadge}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +107,7 @@ const Services = () => {
             <span>COMPREHENSIVE SECURITY SOLUTIONS</span>
           </motion.div>
 
-          <motion.h2 
+          <motion.h2
             className={styles.secTitle}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -117,20 +118,20 @@ const Services = () => {
             <span className={styles.secTitleSub}>Services</span>
           </motion.h2>
 
-          <motion.p 
+          <motion.p
             className={styles.secDescription}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            From residential protection to enterprise security, we provide end-to-end surveillance 
+            From residential protection to enterprise security, we provide end-to-end surveillance
             solutions tailored to your specific needs with cutting-edge technology.
           </motion.p>
         </div>
 
         {/* Services Grid */}
-        <motion.div 
+        <motion.div
           className={styles.secGrid}
           variants={containerVariants}
           initial="hidden"
@@ -148,9 +149,9 @@ const Services = () => {
             >
               {/* Card Header */}
               <div className={styles.secCardHeader}>
-                <div 
+                <div
                   className={styles.secCardIcon}
-                  style={{ 
+                  style={{
                     background: `linear-gradient(135deg, ${service.color}20, ${service.color}40)`,
                     borderColor: `${service.color}40`
                   }}
@@ -173,12 +174,12 @@ const Services = () => {
               {/* Card Content */}
               <div className={styles.secCardContent}>
                 <p className={styles.secCardDescription}>{service.description}</p>
-                
+
                 {/* Features List */}
                 <div className={styles.secFeatures}>
                   {service.features.map((feature, index) => (
                     <div key={index} className={styles.secFeatureItem}>
-                      <div 
+                      <div
                         className={styles.secFeatureIcon}
                         style={{ backgroundColor: `${service.color}20`, color: service.color }}
                       >
@@ -194,7 +195,7 @@ const Services = () => {
                   <div className={styles.secStatBar}>
                     <div className={styles.secBarLabel}>Efficiency</div>
                     <div className={styles.secBarContainer}>
-                      <motion.div 
+                      <motion.div
                         className={styles.secBarFill}
                         style={{ backgroundColor: service.color }}
                         initial={{ width: 0 }}
@@ -208,7 +209,7 @@ const Services = () => {
                   <div className={styles.secStatBar}>
                     <div className={styles.secBarLabel}>Reliability</div>
                     <div className={styles.secBarContainer}>
-                      <motion.div 
+                      <motion.div
                         className={styles.secBarFill}
                         style={{ backgroundColor: service.color }}
                         initial={{ width: 0 }}
@@ -232,18 +233,20 @@ const Services = () => {
               </div>
 
               {/* Action Button */}
-              <motion.button 
-                className={styles.secActionBtn}
-                style={{ 
-                  background: `linear-gradient(135deg, ${service.color}, ${service.color}DD)`,
-                  '--hover-color': `${service.color}`
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>Learn More</span>
-                <ArrowIcon />
-              </motion.button>
+              <Link to={`/services/${service.id === 1 ? 'professional-installation' : service.id === 2 ? 'live-monitoring' : 'security-integration'}`} style={{textDecoration:"none"}}>
+                <motion.button
+                  className={styles.secActionBtn}
+                  style={{
+                    background: `linear-gradient(135deg, ${service.color}, ${service.color}DD)`,
+                    '--hover-color': `${service.color}`
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span>Learn More</span>
+                  <ArrowIcon />
+                </motion.button>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -307,21 +310,21 @@ const Services = () => {
 // Custom Icons
 const CheckIcon = () => (
   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-    <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const ArrowIcon = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-    <path d="M3.33301 8H12.6663" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M3.33301 8H12.6663" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const CheckCircleIcon = () => (
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-    <circle cx="9" cy="9" r="8" stroke="#10B981" strokeWidth="2"/>
-    <path d="M6 9L8 11L12 7" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="9" cy="9" r="8" stroke="#10B981" strokeWidth="2" />
+    <path d="M6 9L8 11L12 7" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 

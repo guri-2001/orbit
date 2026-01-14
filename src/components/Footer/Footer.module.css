@@ -143,6 +143,11 @@
   flex-direction: column;
 }
 
+.brandText .footerLogoImage {
+  width: 120px;
+  height: auto;
+}
+
 .brandName {
   font-size: 1.5rem;
   font-weight: 700;
