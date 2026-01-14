@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { Camera, Eye, Shield, Zap, Video, Cloud, Smartphone, Users, Bell, Lock, Wifi, Settings, ChevronRight } from 'lucide-react';
+import { Camera, Home, Lock, Phone, Shield, Cable, Tv, Music, Radio } from 'lucide-react';
 import { motion } from 'framer-motion';
-import styles from './Services.module.css';
 import { Link } from 'react-router-dom';
+import styles from './Services.module.css';
 
 const Services = () => {
   const [activeService, setActiveService] = useState(null);
@@ -12,57 +12,99 @@ const Services = () => {
     {
       id: 1,
       icon: <Camera />,
-      title: 'Professional Installation',
-      description: 'Expert installation of HD CCTV systems with optimal positioning for maximum coverage.',
-      features: ['Site Survey', 'Custom Wiring', 'Camera Calibration', 'System Testing'],
+      title: 'CCTV Cameras',
+      subtitle: 'Analog & IP',
+      description: 'Professional security camera installation for complete property monitoring.',
+      features: ['HD & 4K camera options', 'Night vision capability', 'Remote viewing access', 'Professional installation'],
       color: '#3B82F6',
-      stats: { completed: '5000+', satisfaction: '99%' }
+      slug: 'cctv-cameras'
     },
     {
       id: 2,
-      icon: <Eye />,
-      title: '24/7 Live Monitoring',
-      description: 'Round-the-clock surveillance by certified security professionals with instant alerts.',
-      features: ['Live Operators', 'Motion Detection', 'Emergency Response', 'Activity Reports'],
-      color: '#10B981',
-      stats: { completed: '24/7', satisfaction: '100%' }
+      icon: <Shield />,
+      title: 'Intrusion & Alarm',
+      subtitle: 'Security Systems',
+      description: 'Advanced security systems to protect your property 24/7.',
+      features: ['Motion sensors', 'Door/window sensors', '24/7 monitoring', 'Emergency response'],
+      color: '#EF4444',
+      slug: 'intrusion-alarm'
     },
     {
       id: 3,
-      icon: <Shield />,
-      title: 'Security System Integration',
-      description: 'Complete security solutions including alarms, access control, and smart home integration.',
-      features: ['Access Control', 'Alarm Systems', 'Smart Locks', 'Integration'],
-      color: '#8B5CF6',
-      stats: { completed: '1500+', satisfaction: '98%' }
+      icon: <Home />,
+      title: 'Smart Home',
+      subtitle: 'Automation Systems',
+      description: 'Modern automation solutions for intelligent home control and security.',
+      features: ['Smart lighting', 'Climate control', 'Voice control', 'Mobile app access'],
+      color: '#10B981',
+      slug: 'smart-home'
+    }
+  ];
+
+  const allServices = [
+    {
+      id: 1,
+      icon: <Camera />,
+      title: 'CCTV Cameras',
+      description: 'Professional security camera installation for complete property monitoring.',
+      slug: 'cctv-cameras'
     },
-    // {
-    //   id: 4,
-    //   icon: <Zap />,
-    //   title: 'AI-Powered Analytics',
-    //   description: 'Advanced AI detection for facial recognition, object tracking, and suspicious activity.',
-    //   features: ['Face Recognition', 'Object Detection', 'Behavior Analysis', 'Smart Alerts'],
-    //   color: '#F59E0B',
-    //   stats: { completed: 'AI Active', satisfaction: '95%' }
-    // },
-    // {
-    //   id: 5,
-    //   icon: <Cloud />,
-    //   title: 'Cloud Storage Solutions',
-    //   description: 'Secure cloud storage with encrypted backup and remote access to footage.',
-    //   features: ['Encrypted Storage', 'Remote Access', 'Auto Backup', 'Multi-Device'],
-    //   color: '#06B6D4',
-    //   stats: { completed: 'Unlimited', satisfaction: '97%' }
-    // },
-    // {
-    //   id: 6,
-    //   icon: <Smartphone />,
-    //   title: 'Mobile App Control',
-    //   description: 'Complete control and monitoring through our dedicated mobile application.',
-    //   features: ['Live View', 'Playback', 'Notifications', 'Remote Control'],
-    //   color: '#EC4899',
-    //   stats: { completed: 'App Ready', satisfaction: '96%' }
-    // }
+    {
+      id: 2,
+      icon: <Home />,
+      title: 'Smart Home & Security',
+      description: 'Modern automation solutions for intelligent home control and security.',
+      slug: 'smart-home-security'
+    },
+    {
+      id: 3,
+      icon: <Lock />,
+      title: 'Smart Doorbell & Lock',
+      description: 'Secure entry systems with remote access and monitoring capabilities.',
+      slug: 'smart-doorbell-lock'
+    },
+    {
+      id: 4,
+      icon: <Phone />,
+      title: 'Intercom & Telephone Entry',
+      description: 'Communication systems for residential and commercial properties.',
+      slug: 'intercom-telephone'
+    },
+    {
+      id: 5,
+      icon: <Shield />,
+      title: 'Intrusion / Alarm Systems',
+      description: 'Advanced security systems to protect your property 24/7.',
+      slug: 'intrusion-alarm'
+    },
+    {
+      id: 6,
+      icon: <Cable />,
+      title: 'Structured Cabling',
+      description: 'Professional wiring infrastructure for reliable connectivity.',
+      slug: 'structured-cabling'
+    },
+    {
+      id: 7,
+      icon: <Tv />,
+      title: 'TV Mounting',
+      description: 'Expert TV installation with clean cable management.',
+      slug: 'tv-mounting'
+    },
+    {
+      id: 8,
+      icon: <Radio />,
+      title: 'Home Theatre Installation',
+      description: 'Complete home cinema setup for the ultimate viewing experience.',
+      slug: 'home-theatre'
+    },
+    {
+      id: 9,
+      icon: <Music />,
+      title: 'Audio, Video & Lighting',
+      description: 'Integrated multimedia and smart lighting solutions.',
+      slug: 'audio-video-lighting'
+    }
   ];
 
   const containerVariants = {
@@ -70,13 +112,13 @@ const Services = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.2
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 }
   };
 
@@ -97,91 +139,84 @@ const Services = () => {
       <div className={styles.secContainer}>
         {/* Section Header */}
         <div className={styles.secHeader}>
-          <motion.div
+          <motion.div 
             className={styles.secBadge}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <Shield size={16} />
-            <span>COMPREHENSIVE SECURITY SOLUTIONS</span>
+            <span>OUR PROFESSIONAL SERVICES</span>
           </motion.div>
 
-          <motion.h2
+          <motion.h2 
             className={styles.secTitle}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <span className={styles.secTitleMain}>Professional Security</span>
-            <span className={styles.secTitleSub}>Services</span>
+            <span className={styles.secTitleMain}>Our Featured Services</span>
+            {/* <span className={styles.secTitleSub}>Solutions</span> */}
           </motion.h2>
 
-          <motion.p
+          <motion.p 
             className={styles.secDescription}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            From residential protection to enterprise security, we provide end-to-end surveillance
-            solutions tailored to your specific needs with cutting-edge technology.
+            Most requested security solutions
           </motion.p>
         </div>
 
-        {/* Services Grid */}
-        <motion.div
-          className={styles.secGrid}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {services.map((service) => (
-            <motion.div
-              key={service.id}
-              className={`${styles.secCard} ${activeService === service.id ? styles.secCardActive : ''}`}
-              variants={itemVariants}
-              onMouseEnter={() => setActiveService(service.id)}
-              onMouseLeave={() => setActiveService(null)}
-              onClick={() => setActiveService(activeService === service.id ? null : service.id)}
-            >
-              {/* Card Header */}
-              <div className={styles.secCardHeader}>
-                <div
-                  className={styles.secCardIcon}
-                  style={{
-                    background: `linear-gradient(135deg, ${service.color}20, ${service.color}40)`,
-                    borderColor: `${service.color}40`
-                  }}
-                >
-                  <div className={styles.secIconInner} style={{ color: service.color }}>
-                    {service.icon}
+        {/* Featured Services Grid */}
+        <div className={styles.featuredSection}>
+          {/* <h3 className={styles.featuredTitle}>Our Featured Services</h3>
+          <p className={styles.featuredSubtitle}>Most requested security solutions</p> */}
+          
+          <motion.div 
+            className={styles.featuredGrid}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            {services.map((service) => (
+              <motion.div
+                key={service.id}
+                className={`${styles.featuredCard} ${activeService === service.id ? styles.featuredCardActive : ''}`}
+                variants={itemVariants}
+                onMouseEnter={() => setActiveService(service.id)}
+                onMouseLeave={() => setActiveService(null)}
+              >
+                <div className={styles.featuredCardHeader}>
+                  <div 
+                    className={styles.featuredIcon}
+                    style={{ 
+                      background: `linear-gradient(135deg, ${service.color}20, ${service.color}40)`,
+                      borderColor: `${service.color}40`
+                    }}
+                  >
+                    <div className={styles.featuredIconInner} style={{ color: service.color }}>
+                      {service.icon}
+                    </div>
                   </div>
-                  <div className={styles.secIconGlow} style={{ backgroundColor: service.color }}></div>
-                </div>
-                <div className={styles.secCardTitle}>
-                  <h3>{service.title}</h3>
-                  <div className={styles.secCardStats}>
-                    <span className={styles.secStat}>{service.stats.completed}</span>
-                    <span className={styles.secStatDivider}>•</span>
-                    <span className={styles.secStat}>{service.stats.satisfaction} Satisfaction</span>
+                  <div className={styles.featuredTitleWrapper}>
+                    <h3>{service.title}</h3>
+                    <p className={styles.featuredSubtitleText}>{service.subtitle}</p>
                   </div>
                 </div>
-              </div>
 
-              {/* Card Content */}
-              <div className={styles.secCardContent}>
-                <p className={styles.secCardDescription}>{service.description}</p>
+                <p className={styles.featuredDescription}>{service.description}</p>
 
-                {/* Features List */}
-                <div className={styles.secFeatures}>
+                <div className={styles.featuredFeatures}>
                   {service.features.map((feature, index) => (
-                    <div key={index} className={styles.secFeatureItem}>
-                      <div
-                        className={styles.secFeatureIcon}
-                        style={{ backgroundColor: `${service.color}20`, color: service.color }}
+                    <div key={index} className={styles.featuredFeature}>
+                      <div 
+                        className={styles.featuredFeatureIcon}
+                        style={{ backgroundColor: `${service.color}15`, color: service.color }}
                       >
                         <CheckIcon />
                       </div>
@@ -190,119 +225,79 @@ const Services = () => {
                   ))}
                 </div>
 
-                {/* Stats Bars */}
-                <div className={styles.secStatsBars}>
-                  <div className={styles.secStatBar}>
-                    <div className={styles.secBarLabel}>Efficiency</div>
-                    <div className={styles.secBarContainer}>
-                      <motion.div
-                        className={styles.secBarFill}
-                        style={{ backgroundColor: service.color }}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: '95%' }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.3 }}
-                      />
-                    </div>
-                    <div className={styles.secBarValue}>95%</div>
-                  </div>
-                  <div className={styles.secStatBar}>
-                    <div className={styles.secBarLabel}>Reliability</div>
-                    <div className={styles.secBarContainer}>
-                      <motion.div
-                        className={styles.secBarFill}
-                        style={{ backgroundColor: service.color }}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: '98%' }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                      />
-                    </div>
-                    <div className={styles.secBarValue}>98%</div>
-                  </div>
-                </div>
-
-                {/* Hover Effect Elements */}
-                <div className={styles.secHoverElements}>
-                  <div className={styles.secPulseRing} style={{ borderColor: service.color }}></div>
-                  <div className={styles.secCornerTopLeft} style={{ backgroundColor: service.color }}></div>
-                  <div className={styles.secCornerTopRight} style={{ backgroundColor: service.color }}></div>
-                  <div className={styles.secCornerBottomLeft} style={{ backgroundColor: service.color }}></div>
-                  <div className={styles.secCornerBottomRight} style={{ backgroundColor: service.color }}></div>
-                </div>
-              </div>
-
-              {/* Action Button */}
-              <Link to={`/services/${service.id === 1 ? 'professional-installation' : service.id === 2 ? 'live-monitoring' : 'security-integration'}`} style={{textDecoration:"none"}}>
-                <motion.button
-                  className={styles.secActionBtn}
-                  style={{
-                    background: `linear-gradient(135deg, ${service.color}, ${service.color}DD)`,
-                    '--hover-color': `${service.color}`
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span>Learn More</span>
-                  <ArrowIcon />
-                </motion.button>
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Service Comparison */}
-        {/* <div className={styles.secComparison}>
-          <motion.div 
-            className={styles.secComparisonCard}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className={styles.secComparisonHeader}>
-              <Settings size={24} />
-              <h3>Complete Security Package</h3>
-              <div className={styles.secComparisonBadge}>Most Popular</div>
-            </div>
-            <div className={styles.secComparisonContent}>
-              <div className={styles.secComparisonFeatures}>
-                {['Installation', 'Monitoring', 'Maintenance', 'Support', 'Updates', 'Warranty'].map((feature) => (
-                  <div key={feature} className={styles.secComparisonFeature}>
-                    <CheckCircleIcon />
-                    <span>{feature} Included</span>
-                  </div>
-                ))}
-              </div>
-              <div className={styles.secComparisonCTA}>
-                <button className={styles.secPackageBtn}>
-                  <span>View Complete Packages</span>
-                  <ChevronRight size={20} />
-                </button>
-              </div>
-            </div>
+                <Link to={`/services/${service.slug}`} style={{textDecoration:"none"}}>
+                  <motion.button 
+                    className={styles.featuredButton}
+                    style={{ 
+                      background: `linear-gradient(135deg, ${service.color}, ${service.color}DD)`,
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span>View Details</span>
+                    <ArrowIcon />
+                  </motion.button>
+                </Link>
+              </motion.div>
+            ))}
           </motion.div>
-        </div> */}
-      </div>
+        </div>
 
-      {/* Floating CTAs */}
-      {/* <div className={styles.secFloatingCTAs}>
-        <motion.div 
-          className={styles.secFloatingCTA}
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 3, repeat: Infinity }}
+        {/* All Services Grid */}
+        {/* <div className={styles.allServicesSection}>
+          <h3 className={styles.allServicesTitle}>All Our Services</h3>
+          <p className={styles.allServicesSubtitle}>Complete range of security and technology solutions</p>
+          
+          <div className={styles.allServicesGrid}>
+            {allServices.map((service, index) => (
+              <Link to={`/services/${service.slug}`} key={service.id} className={styles.serviceLink}>
+                <motion.div 
+                  className={styles.serviceItem}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className={styles.serviceItemIcon}>
+                    {service.icon}
+                  </div>
+                  <div className={styles.serviceItemContent}>
+                    <h4>{service.title}</h4>
+                    <p>{service.description}</p>
+                  </div>
+                  <div className={styles.serviceItemArrow}>
+                    <ArrowIcon />
+                  </div>
+                </motion.div>
+              </Link>
+            ))}
+          </div>
+        </div> */}
+
+        {/* CTA Section */}
+        {/* <motion.div 
+          className={styles.ctaSection}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
         >
-          <Video size={20} />
-          <span>Free Demo Available</span>
-        </motion.div>
-        <motion.div 
-          className={styles.secFloatingCTA}
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-        >
-          <Users size={20} />
-          <span>Expert Consultation</span>
-        </motion.div>
-      </div> */}
+          <div className={styles.ctaContent}>
+            <h3>Need a Custom Security Solution?</h3>
+            <p>Contact us for a free consultation and customized security plan</p>
+            <Link to="/contact">
+              <motion.button 
+                className={styles.ctaButton}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>Get Free Consultation</span>
+                <ArrowIcon />
+              </motion.button>
+            </Link>
+          </div>
+        </motion.div> */}
+      </div>
     </section>
   );
 };
@@ -310,21 +305,14 @@ const Services = () => {
 // Custom Icons
 const CheckIcon = () => (
   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-    <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
 const ArrowIcon = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-    <path d="M3.33301 8H12.6663" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const CheckCircleIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-    <circle cx="9" cy="9" r="8" stroke="#10B981" strokeWidth="2" />
-    <path d="M6 9L8 11L12 7" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M3.33301 8H12.6663" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 

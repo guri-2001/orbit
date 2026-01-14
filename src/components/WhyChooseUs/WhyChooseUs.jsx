@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useRef, useMemo } from 'react';
-import { Shield, Award, Clock, Users, Zap, CheckCircle, TrendingUp, Globe, Cpu, Battery, ShieldCheck, Lock, Star } from 'lucide-react';
+import { Shield, Clock, MessageSquare, Star, Users, Award, CheckCircle } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import styles from './WhyChooseUs.module.css';
 
@@ -23,37 +23,37 @@ const WhyChooseUs = () => {
   const features = [
     {
       id: 1,
-      icon: <Shield />,
-      title: '5+ Years Security Excellence',
-      description: 'Industry-leading experience protecting thousands of properties',
-      stats: '5000+ Systems',
+      icon: <Clock />,
+      title: 'Work Done On Time',
+      description: 'We respect your schedule. Every project is completed professionally and on time, exactly as promised.',
+      stats: '98% On-Time',
       color: '#3B82F6',
       gradient: 'linear-gradient(135deg, #3B82F6, #60A5FA)',
     },
     {
       id: 2,
-      icon: <Award />,
-      title: 'Certified Security Experts',
-      description: 'Our team holds top security certifications and ongoing training',
-      stats: '150+ Experts',
+      icon: <MessageSquare />,
+      title: 'Excellent Communication',
+      description: 'Clear updates from start to finish. We keep you informed and answer all your questions promptly.',
+      stats: '100% Response',
       color: '#10B981',
       gradient: 'linear-gradient(135deg, #10B981, #34D399)',
     },
     {
       id: 3,
-      icon: <Clock />,
-      title: '24/7 Live Monitoring',
-      description: 'Round-the-clock surveillance with instant emergency response',
-      stats: '100% Uptime',
+      icon: <Award />,
+      title: 'High-Quality Installation',
+      description: 'Expert craftsmanship with attention to detail. Every installation meets the highest standards with clean, professional results.',
+      stats: 'Premium Quality',
       color: '#F59E0B',
       gradient: 'linear-gradient(135deg, #F59E0B, #FBBF24)',
     },
     {
       id: 4,
-      icon: <Zap />,
-      title: 'Advanced AI Technology',
-      description: 'Smart detection and analytics powered by artificial intelligence',
-      stats: '99.8% Accuracy',
+      icon: <Star />,
+      title: 'Highly Recommended',
+      description: '5.0-star rating with 40+ reviews. Our customers trust us and recommend us to family and friends.',
+      stats: '5.0 Stars',
       color: '#8B5CF6',
       gradient: 'linear-gradient(135deg, #8B5CF6, #A78BFA)',
     },
@@ -61,32 +61,32 @@ const WhyChooseUs = () => {
 
   const advantages = [
     {
-      icon: <Cpu />,
-      title: 'Smart Technology',
-      items: ['AI Motion Detection', 'Facial Recognition', 'Object Tracking'],
+      icon: <Users />,
+      title: 'Professional Team',
+      items: ['Certified Technicians', 'Experienced Installers', 'Friendly Customer Service'],
     },
     {
-      icon: <Globe />,
-      title: 'Global Standards',
-      items: ['ISO 27001 Certified', 'GDPR Compliant', 'Industry Certified'],
+      icon: <Clock />,
+      title: 'Reliable Service',
+      items: ['Prompt Response', 'Flexible Scheduling', 'On-Time Completion'],
     },
     {
-      icon: <Battery />,
-      title: 'Reliable Systems',
-      items: ['Backup Power', 'Redundant Storage', 'Auto Updates'],
+      icon: <Award />,
+      title: 'Quality Guarantee',
+      items: ['Premium Materials', 'Expert Installation', 'Workmanship Warranty'],
     },
     {
-      icon: <ShieldCheck />,
-      title: 'Complete Protection',
-      items: ['End-to-End Encryption', 'Privacy Controls', 'Regular Audits'],
+      icon: <Shield />,
+      title: 'Customer Trust',
+      items: ['Transparent Pricing', 'Honest Communication', 'Satisfaction Guaranteed'],
     },
   ];
 
   const stats = [
-    { value: '99.9%', label: 'System Reliability', icon: <TrendingUp /> },
-    { value: '<30min', label: 'Response Time', icon: <Clock /> },
-    { value: '24/7', label: 'Support Available', icon: <Users /> },
-    { value: '5★', label: 'Customer Rating', icon: <Star /> },
+    { value: '40+', label: '5-Star Reviews', icon: <Star /> },
+    { value: '98%', label: 'On-Time Rate', icon: <Clock /> },
+    { value: '100%', label: 'Satisfaction', icon: <Award /> },
+    { value: '24/7', label: 'Support', icon: <Shield /> },
   ];
 
   return (
@@ -106,14 +106,14 @@ const WhyChooseUs = () => {
         >
           <div className={styles.badge}>
             <Shield size={18} />
-            <span>TRUSTED SECURITY PARTNER</span>
+            <span>WHY CHOOSE US</span>
           </div>
           <h2 className={styles.title}>
-            Why <span className={styles.highlight}>Thousands Trust</span> Our Security Solutions
+            The <span className={styles.highlight}>Trusted Choice</span> for Security & Installation Services
           </h2>
           <p className={styles.subtitle}>
-            Experience the difference with industry-leading technology, certified expertise, 
-            and unparalleled customer support for complete peace of mind.
+            We deliver professional, reliable service with a commitment to quality, communication, and customer satisfaction.
+            Experience the difference with a team that truly cares about your security needs.
           </p>
         </motion.div>
 
@@ -137,7 +137,7 @@ const WhyChooseUs = () => {
               }}
             >
               <div className={styles.coreInner}>
-                <Lock size={40} className={styles.coreIcon} />
+                <Shield size={40} className={styles.coreIcon} />
               </div>
               
               {/* Rotating Orbits */}
@@ -187,7 +187,7 @@ const WhyChooseUs = () => {
                 </div>
                 <div className={styles.featureStats}>
                   <div className={styles.statsValue}>{features[activeFeature].stats}</div>
-                  <div className={stats.label}>PROVEN RESULTS</div>
+                  <div className={styles.statsLabel}>TRUSTED SERVICE</div>
                 </div>
               </div>
             </motion.div>
@@ -220,7 +220,7 @@ const WhyChooseUs = () => {
                       {feature.title}
                       <div className={styles.featureBadge}>
                         <CheckCircle size={14} />
-                        <span>Verified</span>
+                        <span>Guaranteed</span>
                       </div>
                     </div>
                   </div>
@@ -273,7 +273,7 @@ const WhyChooseUs = () => {
         </motion.div>
 
         {/* Stats Banner */}
-        {/* <motion.div 
+        <motion.div 
           className={styles.statsBanner}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -293,33 +293,7 @@ const WhyChooseUs = () => {
               </div>
             ))}
           </div>
-        </motion.div> */}
-
-        {/* Trust Indicators */}
-        {/* <motion.div 
-          className={styles.trustIndicators}
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <div className={styles.trustHeader}>
-            <Award size={24} />
-            <h3>Certified & Accredited</h3>
-          </div>
-          <div className={styles.certifications}>
-            {['ISO 27001', 'SSAIB', 'NSI Gold', 'Cyber Essentials', 'GDPR Compliant'].map((cert, index) => (
-              <motion.div
-                key={index}
-                className={styles.certBadge}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ShieldCheck size={16} />
-                <span>{cert}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
+        </motion.div>
       </div>
 
       {/* Floating Particles */}

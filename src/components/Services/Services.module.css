@@ -1,7 +1,7 @@
 /* Services Section - Unique Class Names */
 .servicesSection {
   position: relative;
-  padding: 100px 0;
+  padding: 80px 0 0 0;
   background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
   overflow: hidden;
 }
@@ -63,7 +63,7 @@
 .secContainer {
   position: relative;
   z-index: 2;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -90,10 +90,9 @@
 }
 
 .secTitle {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 800;
   line-height: 1.1;
-  /* margin-bottom: 1.5rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,17 +132,32 @@
   line-height: 1.6;
 }
 
-/* Services Grid */
-.secGrid {
+/* Featured Services Section */
+.featuredSection {
+  margin-bottom: 5rem;
+}
+
+.featuredTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1E293B;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.featuredSubtitle {
+  text-align: center;
+  color: #64748B;
+  margin-bottom: 3rem;
+}
+
+.featuredGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  /* margin-bottom: 4rem; */
 }
 
-/* Service Card */
-.secCard {
-  position: relative;
+.featuredCard {
   background: white;
   border-radius: 20px;
   padding: 2rem;
@@ -151,100 +165,72 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  cursor: pointer;
 }
 
-.secCard:hover {
+.featuredCard:hover {
   transform: translateY(-10px);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
   border-color: rgba(59, 130, 246, 0.3);
 }
 
-.secCardActive {
+.featuredCardActive {
   transform: translateY(-10px);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
   border-color: rgba(59, 130, 246, 0.4);
 }
 
-/* Card Header */
-.secCardHeader {
+.featuredCardHeader {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.secCardIcon {
-  width: 70px;
-  height: 70px;
+.featuredIcon {
+  width: 60px;
+  height: 60px;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   border: 2px solid;
   flex-shrink: 0;
 }
 
-.secIconInner {
-  position: relative;
-  z-index: 2;
+.featuredIconInner {
+  width: 28px;
+  height: 28px;
 }
 
-.secIconGlow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  opacity: 0.1;
-  filter: blur(10px);
-}
-
-.secCardTitle h3 {
+.featuredTitleWrapper h3 {
   font-size: 1.5rem;
   font-weight: 700;
   color: #1E293B;
-  /* margin-bottom: 0.5rem; */
+  margin: 0;
   line-height: 1.2;
-    margin: 0;
 }
 
-.secCardStats {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
+.featuredSubtitleText {
+  color: #64748B;
+  font-size: 0.95rem;
+  margin: 0.25rem 0 0 0;
 }
 
-.secStat {
-  font-weight: 600;
-  color: #475569;
-}
-
-.secStatDivider {
-  color: #CBD5E1;
-}
-
-/* Card Content */
-.secCardDescription {
+.featuredDescription {
   color: #64748B;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
 }
 
-/* Features List */
-.secFeatures {
+.featuredFeatures {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
   margin-bottom: 2rem;
 }
 
-.secFeatureItem {
+.featuredFeature {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -252,7 +238,7 @@
   color: #475569;
 }
 
-.secFeatureIcon {
+.featuredFeatureIcon {
   width: 28px;
   height: 28px;
   border-radius: 8px;
@@ -262,130 +248,13 @@
   flex-shrink: 0;
 }
 
-/* Stats Bars */
-.secStatsBars {
-  margin-bottom: 2rem;
-}
-
-.secStatBar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.secBarLabel {
-  width: 100px;
-  font-size: 0.875rem;
-  color: #475569;
-  font-weight: 500;
-}
-
-.secBarContainer {
-  flex: 1;
-  height: 8px;
-  background: #E2E8F0;
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-}
-
-.secBarFill {
-  height: 100%;
-  border-radius: 4px;
-  position: relative;
-}
-
-.secBarFill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: secShimmer 2s infinite;
-}
-
-.secBarValue {
-  width: 40px;
-  text-align: right;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #1E293B;
-}
-
-/* Hover Elements */
-.secHoverElements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.secCard:hover .secHoverElements {
-  opacity: 1;
-}
-
-.secPulseRing {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% + 40px);
-  height: calc(100% + 40px);
-  border: 2px solid;
-  border-radius: 24px;
-  animation: secPulse 2s infinite;
-}
-
-.secCornerTopLeft,
-.secCornerTopRight,
-.secCornerBottomLeft,
-.secCornerBottomRight {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  opacity: 0.8;
-}
-
-.secCornerTopLeft {
-  top: -1px;
-  left: -1px;
-  border-radius: 20px 0 0 0;
-}
-
-.secCornerTopRight {
-  top: -1px;
-  right: -1px;
-  border-radius: 0 20px 0 0;
-}
-
-.secCornerBottomLeft {
-  bottom: -1px;
-  left: -1px;
-  border-radius: 0 0 0 20px;
-}
-
-.secCornerBottomRight {
-  bottom: -1px;
-  right: -1px;
-  border-radius: 0 0 20px 0;
-}
-
-/* Action Button */
-.secActionBtn {
+.featuredButton {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(135deg, var(--color, #3B82F6), var(--color, #3B82F6)DD);
   color: white;
   border: none;
   border-radius: 12px;
@@ -395,100 +264,130 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  z-index: 2;
 }
 
-.secActionBtn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.6s ease;
+.featuredButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.secActionBtn:hover::before {
-  left: 100%;
+/* All Services Section */
+.allServicesSection {
+  margin-bottom: 5rem;
 }
 
-.secActionBtn:hover {
-  box-shadow: 0 10px 30px rgba(var(--hover-color-rgb, 59, 130, 246), 0.3);
+.allServicesTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1E293B;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
-/* Service Comparison */
-.secComparison {
-  margin-top: 3rem;
+.allServicesSubtitle {
+  text-align: center;
+  color: #64748B;
+  margin-bottom: 3rem;
 }
 
-.secComparisonCard {
-  background: linear-gradient(135deg, #1E293B, #0F172A);
+.allServicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.serviceLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.serviceItem {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.serviceItem:hover {
+  border-color: #3B82F6;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+}
+
+.serviceItemIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3B82F6;
+  flex-shrink: 0;
+}
+
+.serviceItemContent {
+  flex: 1;
+}
+
+.serviceItemContent h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin: 0 0 0.5rem 0;
+}
+
+.serviceItemContent p {
+  font-size: 0.875rem;
+  color: #64748B;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.serviceItemArrow {
+  color: #94A3B8;
+  transition: transform 0.3s ease;
+}
+
+.serviceItem:hover .serviceItemArrow {
+  transform: translateX(5px);
+  color: #3B82F6;
+}
+
+/* CTA Section */
+.ctaSection {
+  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
   border-radius: 24px;
   padding: 3rem;
+  text-align: center;
   color: white;
-  position: relative;
-  overflow: hidden;
 }
 
-.secComparisonCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #3B82F6, #8B5CF6);
-}
-
-.secComparisonHeader {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.secComparisonHeader h3 {
-  font-size: 1.75rem;
+.ctaContent h3 {
+  font-size: 2rem;
   font-weight: 700;
-  flex: 1;
+  margin-bottom: 1rem;
 }
 
-.secComparisonBadge {
-  padding: 0.5rem 1.5rem;
-  background: linear-gradient(135deg, #10B981, #059669);
-  border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-.secComparisonContent {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-}
-
-.secComparisonFeatures {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  flex: 1;
-}
-
-.secComparisonFeature {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.95rem;
+.ctaContent p {
+  font-size: 1.125rem;
   color: #E2E8F0;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.secPackageBtn {
-  display: flex;
+.ctaButton {
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   background: white;
   color: #1E293B;
   border: none;
@@ -499,44 +398,10 @@
   transition: all 0.3s ease;
 }
 
-.secPackageBtn:hover {
+.ctaButton:hover {
   background: #F1F5F9;
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Floating CTAs */
-.secFloatingCTAs {
-  position: absolute;
-  top: 50%;
-  right: 2rem;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  z-index: 3;
-}
-
-.secFloatingCTA {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  background: white;
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #475569;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.secFloatingCTA:hover {
-  background: #3B82F6;
-  color: white;
-  transform: translateX(-10px);
 }
 
 /* Animations */
@@ -547,28 +412,13 @@
   75% { transform: translateY(-10px) translateX(-10px); }
 }
 
-@keyframes secShimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-@keyframes secPulse {
-  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0; }
-}
-
 /* Responsive Design */
-@media (max-width: 1200px) {
-  .secGrid {
+@media (max-width: 1024px) {
+  .featuredGrid {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .secComparisonContent {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .secComparisonFeatures {
+  .allServicesGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -586,34 +436,24 @@
     font-size: 2.5rem;
   }
   
-  .secGrid {
+  .featuredGrid {
     grid-template-columns: 1fr;
   }
   
-  .secFeatures {
+  .featuredFeatures {
     grid-template-columns: 1fr;
   }
   
-  .secFloatingCTAs {
-    position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 2rem;
+  .allServicesGrid {
+    grid-template-columns: 1fr;
   }
   
-  .secFloatingCTA:hover {
-    transform: translateY(-5px);
-  }
-  
-  .secComparisonCard {
+  .ctaSection {
     padding: 2rem;
   }
   
-  .secComparisonFeatures {
-    grid-template-columns: 1fr;
+  .ctaContent h3 {
+    font-size: 1.75rem;
   }
 }
 
@@ -622,22 +462,17 @@
     font-size: 2rem;
   }
   
-  .secCard {
+  .featuredCard {
     padding: 1.5rem;
   }
   
-  .secCardHeader {
+  .featuredCardHeader {
     flex-direction: column;
     text-align: center;
   }
   
-  .secCardIcon {
-    margin: 0 auto;
-  }
-  
-  .secComparisonHeader {
+  .serviceItem {
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
   }
 }

@@ -1,0 +1,265 @@
+/* FAQ Section */
+.faqSection {
+  background-color: #ffffff;
+  padding: 80px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #333333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.headerContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  color: #666666;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.title {
+  color: #1a1a1a;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.description {
+  color: #666666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* FAQ List */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+/* FAQ Item */
+.faqItem {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.faqItem:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.faqItem.active {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.1);
+}
+
+/* FAQ Button */
+.faqButton {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.faqButton:hover {
+  background-color: #f9fafb;
+}
+
+.faqItem.active .faqButton {
+  background-color: #f0f7ff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.questionNumber {
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-width: 36px;
+  padding: 4px 8px;
+  background: #eff6ff;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.faqItem.active .questionNumber {
+  background: #3b82f6;
+  color: white;
+}
+
+.questionText {
+  flex: 1;
+  color: #1f2937;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.arrowIcon {
+  color: #6b7280;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.faqItem.active .arrowIcon {
+  color: #3b82f6;
+  transform: rotate(180deg);
+}
+
+/* FAQ Answer */
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faqItem.active .faqAnswer {
+  max-height: 400px;
+}
+
+.answerContent {
+  padding: 24px;
+  padding-top: 0;
+}
+
+.answerContent p {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+  padding-left: 52px; /* Align with question text */
+}
+
+/* CTA Section */
+.ctaSection {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  color: #1e40af;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ctaText {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: #3b82f6;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.ctaButton:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 60px 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .faqButton {
+    padding: 20px;
+  }
+
+  .questionText {
+    font-size: 1rem;
+  }
+
+  .answerContent p {
+    padding-left: 0;
+  }
+
+  .ctaSection {
+    padding: 32px 24px;
+  }
+
+  .ctaTitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faqSection {
+    padding: 40px 16px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .faqButton {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .questionNumber {
+    min-width: 32px;
+    font-size: 0.75rem;
+  }
+
+  .ctaButton {
+    width: 100%;
+    padding: 16px 24px;
+  }
+}

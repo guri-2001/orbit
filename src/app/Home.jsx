@@ -5,6 +5,7 @@ import FeaturedProducts from '../components/FeaturedProducts/FeaturedProducts'
 import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs'
 import InstallationProcess from '../components/InstallationProcess/InstallationProcess'
 import Footer from '../components/Footer/Footer'
+import FAQ from '../components/FAQ/FAQ'
 
 const Home = () => {
        useEffect(() => {
@@ -16,7 +17,8 @@ const Home = () => {
             <Services />
             <FeaturedProducts />
             <WhyChooseUs />
-            <InstallationProcess />
+            <FAQ />
+            {/* <InstallationProcess /> */}
             {/* <Footer /> */}
         </div>
     )

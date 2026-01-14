@@ -91,12 +91,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <span className={styles.titleLine}>Protect What Matters</span>
+            <span className={styles.titleLine}>Professional Automation</span>
             <span className={styles.titleLine}>
-              With <span className={styles.highlight}>Advanced</span>
+               &  <span className={styles.highlight}> Security Solutions</span>
             </span>
             <span className={styles.titleLine}>
-              <span className={styles.gradientText}>Technical Solutions</span>
+              <span className={styles.gradientText}> You Can Trust</span>
             </span>
           </motion.h1>
 
@@ -106,9 +106,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Experience next-generation surveillance with AI-powered detection, 
-            24/7 professional monitoring, and crystal-clear 4K resolution. 
-            Your safety redefined.
+           Expert installation, clean work, and reliable service from start to finish.
           </motion.p>
 
           {/* CTA Buttons */}
