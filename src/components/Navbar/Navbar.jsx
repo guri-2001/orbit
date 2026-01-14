@@ -283,7 +283,7 @@ const Navbar = () => {
                                 <div className={styles.sidebarContact}>
                                     <div className={styles.contactItem}>
                                         <Zap size={16} />
-                                        <span>24/7 Support: 1-800-SECURE</span>
+                                        <span>24/7 Support: +1 (437) 351-1000</span>
                                     </div>
                                     <div className={styles.contactItem}>
                                         <Shield size={16} />
