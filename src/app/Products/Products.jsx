@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Camera, Zap, Eye, Shield, Wifi, Cloud, Star, ShoppingCart, Filter, Search, TrendingUp, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
-import './Products.css';
+import './Products.module.css';
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState('all');

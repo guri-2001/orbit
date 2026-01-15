@@ -8,7 +8,7 @@ import {
   CheckCircle, Clock, Users, DollarSign, Star, ChevronRight,
   Wifi, Video, Bell, Smartphone, Zap, Settings, Cloud
 } from 'lucide-react';
-import './ServiceDetail.css';
+// import './ServiceDetail.css';
 
 const ServiceDetail = () => {
   const { serviceSlug } = useParams();

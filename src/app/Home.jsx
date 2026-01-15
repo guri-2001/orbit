@@ -6,6 +6,8 @@ import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs'
 import InstallationProcess from '../components/InstallationProcess/InstallationProcess'
 import Footer from '../components/Footer/Footer'
 import FAQ from '../components/FAQ/FAQ'
+import OrbitTech from '../components/about/about'
+import ContactQuote from '../components/contact/contact'
 
 const Home = () => {
        useEffect(() => {
@@ -14,10 +16,12 @@ const Home = () => {
     return (
         <div>
             <Hero />
+            <OrbitTech />
             <Services />
-            <FeaturedProducts />
+            {/* <FeaturedProducts /> */}
             <WhyChooseUs />
             <FAQ />
+            <ContactQuote />
             {/* <InstallationProcess /> */}
             {/* <Footer /> */}
         </div>

@@ -18,13 +18,13 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navItems = [
-        { id: 'home', path: '/', label: 'Home', icon: <Home size={18} />, color: '#3B82F6' },
-        { id: 'services', path: '/services', label: 'Services', icon: <Settings size={18} />, color: '#10B981' },
-        { id: 'products', path: '/products', label: 'Products', icon: <Camera size={18} />, color: '#8B5CF6' },
-        { id: 'about', path: '/about', label: 'About Us', icon: <Users size={18} />, color: '#EF4444' },
-        { id: 'contact', path: '/contact', label: 'Contact', icon: <Phone size={18} />, color: '#06B6D4' },
-    ];
+    // const navItems = [
+    //     { id: 'home', path: '/', label: 'Home', icon: <Home size={18} />, color: '#3B82F6' },
+    //     { id: 'services', path: '/services', label: 'Services', icon: <Settings size={18} />, color: '#10B981' },
+    //     { id: 'products', path: '/products', label: 'Products', icon: <Camera size={18} />, color: '#8B5CF6' },
+    //     { id: 'about', path: '/about', label: 'About Us', icon: <Users size={18} />, color: '#EF4444' },
+    //     { id: 'contact', path: '/contact', label: 'Contact', icon: <Phone size={18} />, color: '#06B6D4' },
+    // ];
 
     const handleLinkClick = (id) => {
         setActiveLink(id);
@@ -92,7 +92,7 @@ const Navbar = () => {
                     {/* Desktop Navigation */}
                     <div className={styles.desktopNav}>
                         <div className={styles.navLinks}>
-                            {navItems.map((item) => (
+                            {/* {navItems.map((item) => (
                                 <motion.div
                                     key={item.id}
                                     whileHover={{ y: -2 }}
@@ -114,7 +114,7 @@ const Navbar = () => {
                                         />
                                     </Link>
                                 </motion.div>
-                            ))}
+                            ))} */}
                         </div>
                     </div>
 
@@ -142,7 +142,7 @@ const Navbar = () => {
             </motion.button> */}
 
                         {/* Mobile Menu Button */}
-                        <motion.button
+                        {/* <motion.button
                             className={styles.menuBtn}
                             onClick={() => setIsOpen(!isOpen)}
                             whileTap={{ scale: 0.9 }}
@@ -153,7 +153,7 @@ const Navbar = () => {
                                 <span></span>
                                 <span></span>
                             </div>
-                        </motion.button>
+                        </motion.button> */}
                     </div>
                 </div>
 
@@ -222,7 +222,7 @@ const Navbar = () => {
 
                             {/* Sidebar Navigation - CCTV Style */}
                             <div className={styles.sidebarNav}>
-                                {navItems.map((item, index) => (
+                                {/* {navItems.map((item, index) => (
                                     <motion.div
                                         key={item.id}
                                         variants={itemVariants}
@@ -262,7 +262,7 @@ const Navbar = () => {
                                             )}
                                         </Link>
                                     </motion.div>
-                                ))}
+                                ))} */}
                             </div>
 
                             {/* Sidebar Footer - Quick Actions */}

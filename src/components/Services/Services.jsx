@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { Camera, Home, Lock, Phone, Shield, Cable, Tv, Music, Radio } from 'lucide-react';
+import { Camera, Home, Lock, Phone, Shield, Cable, Tv, Music, Radio, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styles from './Services.module.css';
@@ -45,21 +45,21 @@ const Services = () => {
     {
       id: 1,
       icon: <Camera />,
-      title: 'CCTV Cameras',
+      title: 'CCTV Cameras (Analog & IP)',
       description: 'Professional security camera installation for complete property monitoring.',
       slug: 'cctv-cameras'
     },
     {
       id: 2,
       icon: <Home />,
-      title: 'Smart Home & Security',
+      title: 'Smart Home & Security Systems',
       description: 'Modern automation solutions for intelligent home control and security.',
       slug: 'smart-home-security'
     },
     {
       id: 3,
       icon: <Lock />,
-      title: 'Smart Doorbell & Lock',
+      title: 'Smart Doorbell & Lock Installation',
       description: 'Secure entry systems with remote access and monitoring capabilities.',
       slug: 'smart-doorbell-lock'
     },
@@ -101,7 +101,7 @@ const Services = () => {
     {
       id: 9,
       icon: <Music />,
-      title: 'Audio, Video & Lighting',
+      title: 'Audio, Video & Lighting Systems',
       description: 'Integrated multimedia and smart lighting solutions.',
       slug: 'audio-video-lighting'
     }
@@ -156,8 +156,7 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <span className={styles.secTitleMain}>Our Featured Services</span>
-            {/* <span className={styles.secTitleSub}>Solutions</span> */}
+            <span className={styles.secTitleMain}>Our Services</span>
           </motion.h2>
 
           <motion.p 
@@ -167,15 +166,77 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Most requested security solutions
+            Professional installation and automation solutions for homes and businesses.
           </motion.p>
         </div>
 
-        {/* Featured Services Grid */}
-        <div className={styles.featuredSection}>
-          {/* <h3 className={styles.featuredTitle}>Our Featured Services</h3>
-          <p className={styles.featuredSubtitle}>Most requested security solutions</p> */}
-          
+        {/* All Services Grid */}
+        <div className={styles.allServicesSection}>
+          <div className={styles.allServicesGrid}>
+            {allServices.map((service, index) => (
+              // <Link to={`/services/${service.slug}`} key={service.id} className={styles.serviceLink}>
+                <motion.div 
+                  className={styles.serviceItem}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className={styles.serviceItemIcon}>
+                    {service.icon}
+                  </div>
+                  <div className={styles.serviceItemContent}>
+                    <h4>{service.title}</h4>
+                    <p>{service.description}</p>
+                  </div>
+                  {/* <div className={styles.serviceItemArrow}>
+                    <ArrowIcon />
+                  </div> */}
+                </motion.div>
+              // </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Hidden Wire Installation CTA Section */}
+        <motion.div 
+          className={styles.hiddenWireSection}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+        >
+          <div className={styles.hiddenWireContent}>
+            <div className={styles.hiddenWireHeader}>
+              <Check size={32} className={styles.checkIcon} />
+              <h3>100% Hidden Wire Installation</h3>
+            </div>
+            <p className={styles.hiddenWireDescription}>
+              Professional concealed wiring for a clean, seamless finish with no visible cables.
+            </p>
+            
+            <div className={styles.hiddenWireDivider}></div>
+            
+            <div className={styles.customSolutionSection}>
+              <h4>Need a custom solution?</h4>
+              <p>We handle residential and commercial projects.</p>
+              
+              <motion.a 
+                href="tel:+14373511000"
+                className={styles.phoneButton}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Phone size={20} />
+                <span>Call +1 (437) 351-1000</span>
+              </motion.a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Featured Services Grid - Hidden */}
+        <div className={styles.featuredSection} style={{ display: 'none' }}>
           <motion.div 
             className={styles.featuredGrid}
             variants={containerVariants}
@@ -242,61 +303,6 @@ const Services = () => {
             ))}
           </motion.div>
         </div>
-
-        {/* All Services Grid */}
-        {/* <div className={styles.allServicesSection}>
-          <h3 className={styles.allServicesTitle}>All Our Services</h3>
-          <p className={styles.allServicesSubtitle}>Complete range of security and technology solutions</p>
-          
-          <div className={styles.allServicesGrid}>
-            {allServices.map((service, index) => (
-              <Link to={`/services/${service.slug}`} key={service.id} className={styles.serviceLink}>
-                <motion.div 
-                  className={styles.serviceItem}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className={styles.serviceItemIcon}>
-                    {service.icon}
-                  </div>
-                  <div className={styles.serviceItemContent}>
-                    <h4>{service.title}</h4>
-                    <p>{service.description}</p>
-                  </div>
-                  <div className={styles.serviceItemArrow}>
-                    <ArrowIcon />
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </div> */}
-
-        {/* CTA Section */}
-        {/* <motion.div 
-          className={styles.ctaSection}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className={styles.ctaContent}>
-            <h3>Need a Custom Security Solution?</h3>
-            <p>Contact us for a free consultation and customized security plan</p>
-            <Link to="/contact">
-              <motion.button 
-                className={styles.ctaButton}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>Get Free Consultation</span>
-                <ArrowIcon />
-              </motion.button>
-            </Link>
-          </div>
-        </motion.div> */}
       </div>
     </section>
   );
