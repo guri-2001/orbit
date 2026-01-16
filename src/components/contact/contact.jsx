@@ -47,7 +47,7 @@ const ContactQuote = () => {
 
                         <div className="contact-item">
                             <span className="contact-text">Email us anytime</span>
-                            <a href="mailto:canadabrit@gmail.com" className="email-link">canadabrit@gmail.com</a>
+                            <a href="mailto:canadaorbit@gmail.com" className="email-link">Canadaorbit@gmail.com</a>
                         </div>
 
                         <div className="info-box">
@@ -106,6 +106,17 @@ const ContactQuote = () => {
                                     <option>Smart Home</option>
                                     <option>Alarm System</option>
                                     <option>TV Mounting</option>
+                                    <option>Access Control</option>
+                                    <option>Intercom</option>
+                                    <option>Networking/Structure Cabling</option>
+                                    <option>Lights</option>
+                                    <option>Fan installation </option>
+                                    <option>Installation </option>
+                                    <option>Upgrade </option>
+                                    <option>Troubleshooting </option>
+                                    <option>Gate Automatic</option>
+                                    <option>Smoke/CO2 alarm</option>
+                                    <option>Maintenance</option>
                                 </select>
                             </div>
 
@@ -150,7 +161,7 @@ const ContactQuote = () => {
                         </svg>
                         <div>
                             <h3 className="info-label">Address</h3>
-                            <p className="info-text">3 Fleishers Creek Blvd<br />Brampton, ON L6X 4R7</p>
+                            <p className="info-text">3 Fletchers Creek Blvd, <br /> Brampton ON L6X 4R7, Canada</p>
                         </div>
                     </div>
 
@@ -182,7 +193,7 @@ const ContactQuote = () => {
                         </svg>
                         <div>
                             <h3 className="info-label">Service Area</h3>
-                            <p className="info-text">Brampton & Nearby Areas</p>
+                            <p className="info-text">GTA & Nearby Areas</p>
                         </div>
                     </div>
                 </div>

@@ -109,7 +109,7 @@ const OrbitTechExact = () => {
           {/* Main Image Container */}
           <div className="orbit-image-container">
             <img 
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+              src="https://locksvegas.com/wp-content/uploads/2021/12/iStock-618550358-scaled.jpg" 
               alt="Professional Security Installation"
               className="orbit-main-image"
             />

@@ -77,7 +77,7 @@ const Hero = () => {
                   <MapPin className="feature-icon" size={18} />
                 </div>
                 <div className="feature-text">
-                  <div className="feature-title bold">Brampton</div>
+                  <div className="feature-title bold">GTA</div>
                   <div className="feature-subtitle">& Nearby Areas</div>
                 </div>
               </div>
