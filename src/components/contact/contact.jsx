@@ -109,14 +109,14 @@ const ContactQuote = () => {
                                     <option>Access Control</option>
                                     <option>Intercom</option>
                                     <option>Networking/Structure Cabling</option>
-                                    <option>Lights</option>
-                                    <option>Fan installation </option>
-                                    <option>Installation </option>
-                                    <option>Upgrade </option>
-                                    <option>Troubleshooting </option>
+                                    <option>Lights/ Celing fan/ Bath fan</option>
+                                    {/* <option>Fan installation </option> */}
+                                    <option>Installation/Maintenance/Upgrade/troubleshooting </option>
+                                    {/* <option>Upgrade </option> */}
+                                    {/* <option>Troubleshooting </option> */}
                                     <option>Gate Automatic</option>
                                     <option>Smoke/CO2 alarm</option>
-                                    <option>Maintenance</option>
+                                    {/* <option>Maintenance</option> */}
                                 </select>
                             </div>
 
